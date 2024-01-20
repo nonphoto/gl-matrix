@@ -3,6 +3,11 @@
  * @module glMatrix
  */
 
+export interface IndexedCollection extends Iterable<number> {
+  readonly length: number;
+  [index: number]: number;
+}
+
 // Configuration Constants
 export const EPSILON = 0.000001;
 export let ARRAY_TYPE =
@@ -16,7 +21,7 @@ export let ANGLE_ORDER = "zyx";
  *
  * @param {Number} a value to round
  */
-export function round(a) {
+export function round(a: number): number {
   if (a >= 0)
     return Math.round(a);
 
@@ -28,7 +33,7 @@ export function round(a) {
  *
  * @param {Float32ArrayConstructor | ArrayConstructor} type Array type, such as Float32Array or Array
  */
-export function setMatrixArrayType(type) {
+export function setMatrixArrayType(type: Float32ArrayConstructor | ArrayConstructor):void {
   ARRAY_TYPE = type;
 }
 
@@ -39,7 +44,7 @@ const degree = Math.PI / 180;
  *
  * @param {Number} a Angle in Degrees
  */
-export function toRadian(a) {
+export function toRadian(a: number): number {
   return a * degree;
 }
 
@@ -52,6 +57,6 @@ export function toRadian(a) {
  * @param {Number} b The second number to test.
  * @returns {Boolean} True if the numbers are approximately equal, false otherwise.
  */
-export function equals(a, b) {
+export function equals(a: number, b: number): boolean {
   return Math.abs(a - b) <= EPSILON * Math.max(1.0, Math.abs(a), Math.abs(b));
 }

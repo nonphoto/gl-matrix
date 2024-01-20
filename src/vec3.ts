@@ -10,7 +10,7 @@ import * as glMatrix from "./common.js";
  *
  * @returns {vec3} a new 3D vector
  */
-export function create() {
+export function create(): vec3 {
   let out = new glMatrix.ARRAY_TYPE(3);
   if (glMatrix.ARRAY_TYPE != Float32Array) {
     out[0] = 0;
@@ -26,7 +26,7 @@ export function create() {
  * @param {ReadonlyVec3} a vector to clone
  * @returns {vec3} a new 3D vector
  */
-export function clone(a) {
+export function clone(a: ReadonlyVec3): vec3 {
   var out = new glMatrix.ARRAY_TYPE(3);
   out[0] = a[0];
   out[1] = a[1];
@@ -40,7 +40,7 @@ export function clone(a) {
  * @param {ReadonlyVec3} a vector to calculate length of
  * @returns {Number} length of a
  */
-export function length(a) {
+export function length(a: ReadonlyVec3): number {
   let x = a[0];
   let y = a[1];
   let z = a[2];
@@ -55,7 +55,7 @@ export function length(a) {
  * @param {Number} z Z component
  * @returns {vec3} a new 3D vector
  */
-export function fromValues(x, y, z) {
+export function fromValues(x: number, y: number, z: number): vec3 {
   let out = new glMatrix.ARRAY_TYPE(3);
   out[0] = x;
   out[1] = y;
@@ -70,7 +70,7 @@ export function fromValues(x, y, z) {
  * @param {ReadonlyVec3} a the source vector
  * @returns {vec3} out
  */
-export function copy(out, a) {
+export function copy(out: vec3, a: ReadonlyVec3): vec3 {
   out[0] = a[0];
   out[1] = a[1];
   out[2] = a[2];
@@ -86,7 +86,7 @@ export function copy(out, a) {
  * @param {Number} z Z component
  * @returns {vec3} out
  */
-export function set(out, x, y, z) {
+export function set(out: vec3, x: number, y: number, z: number): vec3 {
   out[0] = x;
   out[1] = y;
   out[2] = z;
@@ -101,7 +101,7 @@ export function set(out, x, y, z) {
  * @param {ReadonlyVec3} b the second operand
  * @returns {vec3} out
  */
-export function add(out, a, b) {
+export function add(out: vec3, a: ReadonlyVec3, b: ReadonlyVec3): vec3 {
   out[0] = a[0] + b[0];
   out[1] = a[1] + b[1];
   out[2] = a[2] + b[2];
@@ -116,7 +116,7 @@ export function add(out, a, b) {
  * @param {ReadonlyVec3} b the second operand
  * @returns {vec3} out
  */
-export function subtract(out, a, b) {
+export function subtract(out: vec3, a: ReadonlyVec3, b: ReadonlyVec3): vec3 {
   out[0] = a[0] - b[0];
   out[1] = a[1] - b[1];
   out[2] = a[2] - b[2];
@@ -131,7 +131,7 @@ export function subtract(out, a, b) {
  * @param {ReadonlyVec3} b the second operand
  * @returns {vec3} out
  */
-export function multiply(out, a, b) {
+export function multiply(out: vec3, a: ReadonlyVec3, b: ReadonlyVec3): vec3 {
   out[0] = a[0] * b[0];
   out[1] = a[1] * b[1];
   out[2] = a[2] * b[2];
@@ -146,7 +146,7 @@ export function multiply(out, a, b) {
  * @param {ReadonlyVec3} b the second operand
  * @returns {vec3} out
  */
-export function divide(out, a, b) {
+export function divide(out: vec3, a: ReadonlyVec3, b: ReadonlyVec3): vec3 {
   out[0] = a[0] / b[0];
   out[1] = a[1] / b[1];
   out[2] = a[2] / b[2];
@@ -160,7 +160,7 @@ export function divide(out, a, b) {
  * @param {ReadonlyVec3} a vector to ceil
  * @returns {vec3} out
  */
-export function ceil(out, a) {
+export function ceil(out: vec3, a: ReadonlyVec3): vec3 {
   out[0] = Math.ceil(a[0]);
   out[1] = Math.ceil(a[1]);
   out[2] = Math.ceil(a[2]);
@@ -174,7 +174,7 @@ export function ceil(out, a) {
  * @param {ReadonlyVec3} a vector to floor
  * @returns {vec3} out
  */
-export function floor(out, a) {
+export function floor(out: vec3, a: ReadonlyVec3): vec3 {
   out[0] = Math.floor(a[0]);
   out[1] = Math.floor(a[1]);
   out[2] = Math.floor(a[2]);
@@ -189,7 +189,7 @@ export function floor(out, a) {
  * @param {ReadonlyVec3} b the second operand
  * @returns {vec3} out
  */
-export function min(out, a, b) {
+export function min(out: vec3, a: ReadonlyVec3, b: ReadonlyVec3): vec3 {
   out[0] = Math.min(a[0], b[0]);
   out[1] = Math.min(a[1], b[1]);
   out[2] = Math.min(a[2], b[2]);
@@ -204,7 +204,7 @@ export function min(out, a, b) {
  * @param {ReadonlyVec3} b the second operand
  * @returns {vec3} out
  */
-export function max(out, a, b) {
+export function max(out: vec3, a: ReadonlyVec3, b: ReadonlyVec3): vec3 {
   out[0] = Math.max(a[0], b[0]);
   out[1] = Math.max(a[1], b[1]);
   out[2] = Math.max(a[2], b[2]);
@@ -218,7 +218,7 @@ export function max(out, a, b) {
  * @param {ReadonlyVec3} a vector to round
  * @returns {vec3} out
  */
-export function round(out, a) {
+export function round(out: vec3, a: ReadonlyVec3): vec3 {
   out[0] = glMatrix.round(a[0]);
   out[1] = glMatrix.round(a[1]);
   out[2] = glMatrix.round(a[2]);
@@ -233,7 +233,7 @@ export function round(out, a) {
  * @param {Number} b amount to scale the vector by
  * @returns {vec3} out
  */
-export function scale(out, a, b) {
+export function scale(out: vec3, a: ReadonlyVec3, b: number): vec3 {
   out[0] = a[0] * b;
   out[1] = a[1] * b;
   out[2] = a[2] * b;
@@ -249,7 +249,7 @@ export function scale(out, a, b) {
  * @param {Number} scale the amount to scale b by before adding
  * @returns {vec3} out
  */
-export function scaleAndAdd(out, a, b, scale) {
+export function scaleAndAdd(out: vec3, a: ReadonlyVec3, b: ReadonlyVec3, scale: number): vec3 {
   out[0] = a[0] + b[0] * scale;
   out[1] = a[1] + b[1] * scale;
   out[2] = a[2] + b[2] * scale;
@@ -263,7 +263,7 @@ export function scaleAndAdd(out, a, b, scale) {
  * @param {ReadonlyVec3} b the second operand
  * @returns {Number} distance between a and b
  */
-export function distance(a, b) {
+export function distance(a: ReadonlyVec3, b: ReadonlyVec3): number {
   let x = b[0] - a[0];
   let y = b[1] - a[1];
   let z = b[2] - a[2];
@@ -277,7 +277,7 @@ export function distance(a, b) {
  * @param {ReadonlyVec3} b the second operand
  * @returns {Number} squared distance between a and b
  */
-export function squaredDistance(a, b) {
+export function squaredDistance(a: ReadonlyVec3, b: ReadonlyVec3): number {
   let x = b[0] - a[0];
   let y = b[1] - a[1];
   let z = b[2] - a[2];
@@ -290,7 +290,7 @@ export function squaredDistance(a, b) {
  * @param {ReadonlyVec3} a vector to calculate squared length of
  * @returns {Number} squared length of a
  */
-export function squaredLength(a) {
+export function squaredLength(a: ReadonlyVec3): number {
   let x = a[0];
   let y = a[1];
   let z = a[2];
@@ -304,7 +304,7 @@ export function squaredLength(a) {
  * @param {ReadonlyVec3} a vector to negate
  * @returns {vec3} out
  */
-export function negate(out, a) {
+export function negate(out: vec3, a: ReadonlyVec3): vec3 {
   out[0] = -a[0];
   out[1] = -a[1];
   out[2] = -a[2];
@@ -318,7 +318,7 @@ export function negate(out, a) {
  * @param {ReadonlyVec3} a vector to invert
  * @returns {vec3} out
  */
-export function inverse(out, a) {
+export function inverse(out: vec3, a: ReadonlyVec3): vec3 {
   out[0] = 1.0 / a[0];
   out[1] = 1.0 / a[1];
   out[2] = 1.0 / a[2];
@@ -332,7 +332,7 @@ export function inverse(out, a) {
  * @param {ReadonlyVec3} a vector to normalize
  * @returns {vec3} out
  */
-export function normalize(out, a) {
+export function normalize(out: vec3, a: ReadonlyVec3): vec3 {
   let x = a[0];
   let y = a[1];
   let z = a[2];
@@ -354,7 +354,7 @@ export function normalize(out, a) {
  * @param {ReadonlyVec3} b the second operand
  * @returns {Number} dot product of a and b
  */
-export function dot(a, b) {
+export function dot(a: ReadonlyVec3, b: ReadonlyVec3): number {
   return a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
 }
 
@@ -366,7 +366,7 @@ export function dot(a, b) {
  * @param {ReadonlyVec3} b the second operand
  * @returns {vec3} out
  */
-export function cross(out, a, b) {
+export function cross(out: vec3, a: ReadonlyVec3, b: ReadonlyVec3): vec3 {
   let ax = a[0],
     ay = a[1],
     az = a[2];
@@ -389,7 +389,7 @@ export function cross(out, a, b) {
  * @param {Number} t interpolation amount, in the range [0-1], between the two inputs
  * @returns {vec3} out
  */
-export function lerp(out, a, b, t) {
+export function lerp(out: vec3, a: ReadonlyVec3, b: ReadonlyVec3, t: number): vec3 {
   let ax = a[0];
   let ay = a[1];
   let az = a[2];
@@ -408,7 +408,7 @@ export function lerp(out, a, b, t) {
  * @param {Number} t interpolation amount, in the range [0-1], between the two inputs
  * @returns {vec3} out
  */
-export function slerp(out, a, b, t) {
+export function slerp(out: vec3, a: ReadonlyVec3, b: ReadonlyVec3, t: number): vec3 {
   let angle = Math.acos(Math.min(Math.max(dot(a, b), -1), 1));
   let sinTotal = Math.sin(angle);
 
@@ -432,7 +432,7 @@ export function slerp(out, a, b, t) {
  * @param {Number} t interpolation amount, in the range [0-1], between the two inputs
  * @returns {vec3} out
  */
-export function hermite(out, a, b, c, d, t) {
+export function hermite(out: vec3, a: ReadonlyVec3, b: ReadonlyVec3, c: ReadonlyVec3, d: ReadonlyVec3, t: number): vec3 {
   let factorTimes2 = t * t;
   let factor1 = factorTimes2 * (2 * t - 3) + 1;
   let factor2 = factorTimes2 * (t - 2) + t;
@@ -457,7 +457,7 @@ export function hermite(out, a, b, c, d, t) {
  * @param {Number} t interpolation amount, in the range [0-1], between the two inputs
  * @returns {vec3} out
  */
-export function bezier(out, a, b, c, d, t) {
+export function bezier(out: vec3, a: ReadonlyVec3, b: ReadonlyVec3, c: ReadonlyVec3, d: ReadonlyVec3, t: number): vec3 {
   let inverseFactor = 1 - t;
   let inverseFactorTimesTwo = inverseFactor * inverseFactor;
   let factorTimes2 = t * t;
@@ -480,7 +480,7 @@ export function bezier(out, a, b, c, d, t) {
  * @param {Number} [scale] Length of the resulting vector. If omitted, a unit vector will be returned
  * @returns {vec3} out
  */
-export function random(out, scale) {
+export function random(out: vec3, scale: number): vec3 {
   scale = scale === undefined ? 1.0 : scale;
 
   let r = glMatrix.RANDOM() * 2.0 * Math.PI;
@@ -502,7 +502,7 @@ export function random(out, scale) {
  * @param {ReadonlyMat4} m matrix to transform with
  * @returns {vec3} out
  */
-export function transformMat4(out, a, m) {
+export function transformMat4(out: vec3, a: ReadonlyVec3, m: ReadonlyMat4): vec3 {
   let x = a[0],
     y = a[1],
     z = a[2];
@@ -522,7 +522,7 @@ export function transformMat4(out, a, m) {
  * @param {ReadonlyMat3} m the 3x3 matrix to transform with
  * @returns {vec3} out
  */
-export function transformMat3(out, a, m) {
+export function transformMat3(out: vec3, a: ReadonlyVec3, m: ReadonlyMat3): vec3 {
   let x = a[0],
     y = a[1],
     z = a[2];
@@ -541,7 +541,7 @@ export function transformMat3(out, a, m) {
  * @param {ReadonlyQuat} q quaternion to transform with
  * @returns {vec3} out
  */
-export function transformQuat(out, a, q) {
+export function transformQuat(out: vec3, a: ReadonlyVec3, q: ReadonlyQuat): vec3 {
   // benchmarks: https://jsperf.com/quaternion-transform-vec3-implementations-fixed
   let qx = q[0],
     qy = q[1],
@@ -583,7 +583,7 @@ export function transformQuat(out, a, q) {
  * @param {Number} rad The angle of rotation in radians
  * @returns {vec3} out
  */
-export function rotateX(out, a, b, rad) {
+export function rotateX(out: vec3, a: ReadonlyVec3, b: ReadonlyVec3, rad: number): vec3 {
   let p = [],
     r = [];
   //Translate point to the origin
@@ -612,7 +612,7 @@ export function rotateX(out, a, b, rad) {
  * @param {Number} rad The angle of rotation in radians
  * @returns {vec3} out
  */
-export function rotateY(out, a, b, rad) {
+export function rotateY(out: vec3, a: ReadonlyVec3, b: ReadonlyVec3, rad: number): vec3 {
   let p = [],
     r = [];
   //Translate point to the origin
@@ -641,7 +641,7 @@ export function rotateY(out, a, b, rad) {
  * @param {Number} rad The angle of rotation in radians
  * @returns {vec3} out
  */
-export function rotateZ(out, a, b, rad) {
+export function rotateZ(out: vec3, a: ReadonlyVec3, b: ReadonlyVec3, rad: number): vec3 {
   let p = [],
     r = [];
   //Translate point to the origin
@@ -668,7 +668,7 @@ export function rotateZ(out, a, b, rad) {
  * @param {ReadonlyVec3} b The second operand
  * @returns {Number} The angle in radians
  */
-export function angle(a, b) {
+export function angle(a: ReadonlyVec3, b: ReadonlyVec3): number {
   let ax = a[0],
     ay = a[1],
     az = a[2],
@@ -686,7 +686,7 @@ export function angle(a, b) {
  * @param {vec3} out the receiving vector
  * @returns {vec3} out
  */
-export function zero(out) {
+export function zero(out: vec3): vec3 {
   out[0] = 0.0;
   out[1] = 0.0;
   out[2] = 0.0;
@@ -699,7 +699,7 @@ export function zero(out) {
  * @param {ReadonlyVec3} a vector to represent as a string
  * @returns {String} string representation of the vector
  */
-export function str(a) {
+export function str(a: ReadonlyVec3): string {
   return "vec3(" + a[0] + ", " + a[1] + ", " + a[2] + ")";
 }
 
@@ -710,7 +710,7 @@ export function str(a) {
  * @param {ReadonlyVec3} b The second vector.
  * @returns {Boolean} True if the vectors are equal, false otherwise.
  */
-export function exactEquals(a, b) {
+export function exactEquals(a: ReadonlyVec3, b: ReadonlyVec3): boolean {
   return a[0] === b[0] && a[1] === b[1] && a[2] === b[2];
 }
 
@@ -721,7 +721,7 @@ export function exactEquals(a, b) {
  * @param {ReadonlyVec3} b The second vector.
  * @returns {Boolean} True if the vectors are equal, false otherwise.
  */
-export function equals(a, b) {
+export function equals(a: ReadonlyVec3, b: ReadonlyVec3): boolean {
   let a0 = a[0],
     a1 = a[1],
     a2 = a[2];
