@@ -10,10 +10,9 @@ export interface IndexedCollection extends Iterable<number> {
 
 // Configuration Constants
 export const EPSILON = 0.000001;
-export let ARRAY_TYPE =
-  typeof Float32Array !== "undefined" ? Float32Array : Array;
-export let RANDOM = Math.random;
-export let ANGLE_ORDER = "zyx";
+export let ARRAY_TYPE: Float32ArrayConstructor | ArrayConstructor = Array;
+export const RANDOM = Math.random;
+export const ANGLE_ORDER = "zyx";
 
 /**
  * Symmetric round

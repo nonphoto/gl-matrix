@@ -42,7 +42,7 @@
   "scripts": {
     "test": "mocha --require @babel/register --recursive spec",
     "doc": "jsdoc -c jsdoc.config.json",
-    "build": "pnpm tsup",
+    "build": "pnpm tsup --dts",
     "prepare": "pnpm build"
   },
   "devDependencies": {

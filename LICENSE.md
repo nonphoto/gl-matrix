@@ -1,3 +1,5 @@
+Copyright (c) 2023, Jonas Luebbers.
+
 Copyright (c) 2015-2021, Brandon Jones, Colin MacKenzie IV.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
