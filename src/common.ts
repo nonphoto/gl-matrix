@@ -59,3 +59,7 @@ export function toRadian(a: number): number {
 export function equals(a: number, b: number): boolean {
   return Math.abs(a - b) <= EPSILON * Math.max(1.0, Math.abs(a), Math.abs(b));
 }
+
+export function mix(a: number, b: number, t: number) {
+  return a + t * (b - a)
+}
